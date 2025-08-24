@@ -6,6 +6,12 @@ if (currentTheme) {
 }
 
 toggleSwitch.addEventListener("change", function () {
+  toggleSwitch.disabled = true;
   document.body.classList.toggle("dark-mode");
   localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
+  setTimeout(() => {
+    toggleSwitch.disabled = false;
+  }, 1000);
 });
+
+
